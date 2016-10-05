@@ -1,0 +1,30 @@
+<div class="normalheader transition animated fadeIn small-header">
+	<div class="panel">
+		<div class="panel-body">
+			
+			<div class="pull-right" id="breadcrumb">
+				<ol class="hbreadcrumb breadcrumb">
+					<li><a href="/admin">Dashboard</a></li>
+					<li><a href="/admin/slides">Slides List</a></li>
+					<li class="active"><a href="/admin/slides/{{ ID }}">{% if data['ID'] %}{{ data['heading'] }}{% else %}new slide{% endif %}</a></li>
+					
+				
+				</ol>
+			</div>
+			<div class="pull-left">
+				<h2 class="font-light">
+					Slides
+				</h2>
+				<small>Edit / Add Slide</small>
+			</div>
+		
+		</div>
+	</div>
+</div>
+
+<form id="form" class="form-horizontal">
+
+</form>
+<script type="text/javascript">
+	var _ID = "{{ ID }}";
+</script>

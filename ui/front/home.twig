@@ -1,0 +1,67 @@
+<section id="content-area">
+	<aside id="menu">
+		<div id="navigation">
+			<div class="profile-picture">
+				<img src="/thumbnail/slides/140/140/{{ record['image_left'] }}?crop=false" class="m-b" style="max-width:100%;">
+				
+				<div class="stats-label text-color">
+					<span class="font-extra-bold font-uppercase">{{ record['heading'] }}</span>
+					
+					
+					
+					
+					<div id="sparkline1" class="small-chart m-t-sm"></div>
+					<div>
+						<h4 class="font-extra-bold m-b-xs">
+							<span class="found-count">0</span> of {{ record['data']|length }} found
+						</h4>
+						<small class="text-muted"></small>
+					</div>
+				</div>
+				<hr>
+			
+			</div>
+		
+		
+		</div>
+	</aside>
+	
+	
+	<section id="wrapper">
+		
+		<div class="content animate-panel">
+			
+			
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="panel">
+						<div class="panel-body" style="padding:0;">
+							<article class="image-area" id="image_left" data-img="{{ record['image_left'] }}" ></article>
+						
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					
+					<div class="panel">
+						<div class="panel-body" style="padding:0;">
+							<article class="image-area" id="image_right" data-img="{{ record['image_right'] }}" ></article>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	
+	<footer class="footer">
+		<div class="progress full" style="margin:0;">
+			<div style="width: 0" aria-valuemax="100" aria-valuemin="0" aria-valuenow="60" role="progressbar" class=" progress-bar progress-bar-info">
+				0%
+			</div>
+		</div>
+	</footer>
+</section>
+<script type="text/javascript">
+	var _ID = "{{ record['ID'] }}";
+</script>

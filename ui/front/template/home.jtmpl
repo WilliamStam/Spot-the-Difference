@@ -1,0 +1,9 @@
+<script type="text/x-jqote-template" id="template-image">
+	<![CDATA[
+	
+	
+	<div id="canvasdiv-<%= this.file.id %>" class="canvas-area" style="width:<%= this.file.width %>px;height:<%= this.file.height %>px;background: url(/thumbnail/slides/<%= this.file.width %>/<%= this.file.height %>/<%= this.file.file %>?crop=false) no-repeat;"></div>
+	
+	
+	]]>
+</script>

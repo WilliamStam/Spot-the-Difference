@@ -1,0 +1,116 @@
+<script type="text/x-jqote-template" id="template-form">
+	<![CDATA[
+	
+	
+	<div class="animate-panel">
+		
+		<div class="panel">
+			<div class="panel-body">
+				<div class="form-group">
+					<label for="heading" class="col-sm-2 control-label">Heading</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="heading" name="heading" placeholder="Slide Heading" value="<%= this.details.heading %>">
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-sm-6" id="image_left-container">
+				<div class="panel">
+					<div class="panel-heading built">Left Image</div>
+					<div class="panel-body">
+						<div class="form-group" id="slide-upload-image_left">
+							<div class="progress full progress-striped active" style="margin-top:10px;" id="image_left-progress">
+								<div style="width: 0%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" role="progressbar" class=" progress-bar progress-bar-info">
+									0%
+								</div>
+							</div>
+							<a class="upload-btn" data-side="left" type="button" id="image_left-btn">
+								<div class="btn-group btn-group-justified form-control">
+									<button class="btn btn-info upload-btn" style="width:100%;" type="button">
+										<i class="fa fa-upload"></i>
+										Upload
+									</button>
+								</div>
+								<div id="image_left-preview" data-width="400" data-height="400" class="text-center">
+									<% if(this.details.image_left){ %>
+									<img src="/thumbnail/slides/400/400/<%= this.details.image_left %>?crop=false"/>
+									<% } %>
+								</div>
+							</a>
+							
+							<input type="hidden" id="image_left" name="image_left" value="<%= this.details.image_left %>"/>
+						</div>
+					
+					</div>
+				
+				</div>
+			</div>
+			<div class="col-sm-6" id="image_right-container">
+				<div class="panel ">
+					<div class="panel-heading built">Right Image</div>
+					<div class="panel-body">
+						<div class="form-group" id="slide-upload-image_right">
+							<div class="progress full progress-striped active" style="margin-top:10px;" id="image_right-progress">
+								<div style="width: 0%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" role="progressbar" class=" progress-bar progress-bar-info">
+									0%
+								</div>
+							</div>
+							<a class="upload-btn" data-side="right" type="button" id="image_right-btn">
+								<div class="btn-group btn-group-justified form-control">
+									<button class="btn btn-info upload-btn" style="width:100%" data-side="right" type="button" id="image_right-btn"><i class="fa fa-upload"></i>
+										Upload
+									</button>
+								</div>
+								<div id="image_right-preview" data-width="400" data-height="400" class="text-center">
+									<% if(this.details.image_right){ %>
+									<img src="/thumbnail/slides/400/400/<%= this.details.image_right %>?crop=false"/>
+									<% } %>
+								</div>
+							</a>
+							<input type="hidden" id="image_right" name="image_right" value="<%= this.details.image_right %>"/>
+						</div>
+					</div>
+				
+				</div>
+			</div>
+		</div>
+		
+		<div class="panel">
+			<div class="panel-heading built text-center">
+				Please select the differences between the pictures. Showing the left image
+				<div class="alert alert-info text-center" style="margin:20px 20px 10px 20px;">
+					<strong>Tip</strong> right click to undo any changes you made. keep right clicking to remove all elements.
+				</div>
+			</div>
+			<div class="panel-body">
+				<div class="btn-group btn-group-justified">
+					<a href="" class="btn btn-default"><i class="fa fa-undo"></i> Undo</a>
+					<a href="" class="btn btn-default"><i class="fa fa-redo"></i> Redo</a>
+				</div>
+				<section id="draw-area"  oncontextmenu="return false;"></section>
+				<input type="hidden" name="data" id="data" value='<%= this.details.data %>'/>
+			</div>
+		</div>
+	
+	</div>
+	<div style="height:50px;"></div>
+	<nav class="navbar navbar-default navbar-fixed-bottom">
+		<div class="container">
+			<div class="navbar-left">
+				<button class="btn btn-danger" type="button"><i class="fa fa-trash"></i></button>
+			</div>
+			<div class="navbar-right nav">
+				
+				
+				<a href="/admin/slides" class="btn btn-link">Cancel</a>
+				
+				<button class="btn btn-primary" type="submit">Submit</button>
+			
+			</div>
+		</div>
+	</nav>
+	
+	]]>
+</script>

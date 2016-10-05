@@ -1,0 +1,192 @@
+{
+  "name": "WilliamStam/WebsiteFramework",
+  "description": "Website Framework",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "William Stam",
+      "email": "william@impreshin.com"
+    }
+  ],
+  "config": {
+    "optimize-autoloader": true
+  },
+  "repositories": [
+    {
+      "type": "package",
+      "package": {
+        "name": "components/jquery-hotkeys",
+        "version": "dev-master",
+        "source": {
+          "url": "https://github.com/jeresig/jquery.hotkeys",
+          "type": "git",
+          "reference": "origin/master"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "components/jquery-mousewheel",
+        "version": "dev-master",
+        "source": {
+          "url": "https://github.com/jquery/jquery-mousewheel/",
+          "type": "git",
+          "reference": "origin/master"
+        }
+      }
+    },
+    
+    {
+      "type": "package",
+      "package": {
+        "name": "components/jQote2",
+        "version": "dev-master",
+        "source": {
+          "url": "https://github.com/aefxx/jQote2",
+          "type": "git",
+          "reference": "origin/master"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "components/TouchSwipe-Jquery-Plugin",
+        "version": "dev-master",
+        "source": {
+          "url": "https://github.com/mattbryson/TouchSwipe-Jquery-Plugin",
+          "type": "git",
+          "reference": "origin/master"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "components/bootstrap-datetimepicker",
+        "version": "dev-master",
+        "source": {
+          "url": "https://github.com/Eonasdan/bootstrap-datetimepicker",
+          "type": "git",
+          "reference": "origin/master"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "components/smartmenus",
+        "version": "dev-master",
+        "source": {
+          "url": "https://github.com/vadikom/smartmenus",
+          "type": "git",
+          "reference": "origin/master"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "components/daterangepicker",
+        "version": "dev-master",
+        "source": {
+          "url": "https://github.com/dangrossman/bootstrap-daterangepicker",
+          "type": "git",
+          "reference": "origin/master"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "components/HideSeek",
+        "version": "dev-master",
+        "source": {
+          "url": "https://github.com/vdw/HideSeek",
+          "type": "git",
+          "reference": "origin/master"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "components/toastr",
+        "version": "dev-master",
+        "source": {
+          "url": "https://github.com/CodeSeven/toastr",
+          "type": "git",
+          "reference": "origin/master"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "components/nicescroll",
+        "version": "dev-master",
+        "source": {
+          "url": "https://github.com/inuyaksa/jquery.nicescroll",
+          "type": "git",
+          "reference": "origin/master"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "codemirror/CodeMirror",
+        "version": "dev-master",
+        "source": {
+          "url": "https://github.com/codemirror/CodeMirror",
+          "type": "git",
+          "reference": "origin/master"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "components/raphael",
+        "version": "dev-master",
+        "source": {
+          "url": "https://github.com/DmitryBaranovskiy/raphael",
+          "type": "git",
+          "reference": "origin/master"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "components/raphael-sketchpad",
+        "version": "dev-master",
+        "source": {
+          "url": "https://github.com/ianli/raphael-sketchpad",
+          "type": "git",
+          "reference": "origin/master"
+        }
+      }
+    }
+  ],
+  "require": {
+    "components/jquery": "3.*",
+    "components/jqueryui": "1.*",
+    "twbs/bootstrap-sass": "3.*",
+    "twig/twig": "*",
+    "moxiecode/plupload": "2.*",
+    "components/modernizr": "*",
+    "bcosca/fatfree": "3.*",
+    "components/jquery-hotkeys": "dev-master",
+    "components/jquery-mousewheel": "dev-master",
+    "components/Font-Awesome": "4.*",
+    "components/jQote2": "dev-master",
+    "components/TouchSwipe-Jquery-Plugin": "dev-master",
+    "components/raphael":"dev-master",
+    "components/raphael-sketchpad":"dev-master",
+    "components/HideSeek":"dev-master",
+    "components/toastr":"dev-master"
+  }
+}

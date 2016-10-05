@@ -1,0 +1,47 @@
+<div id="header">
+	<div class="color-line">
+	</div>
+	<div id="logo" class="light-version">
+        <span>
+            Spot the difference
+        </span>
+	</div>
+	<nav role="navigation">
+		<div class="small-logo">
+			<span class="text-primary">Spot the Difference</span>
+		</div>
+		
+		
+		<div class="navbar-left">
+			<ul class="nav navbar-nav no-borders">
+				{% if nav['prev'] %}
+				<li>
+					<a href="/{{ nav['prev'] }}">
+						<i class="fa fa-arrow-left"></i>
+					</a>
+				</li>
+				{% endif %}
+				{% if nav['next'] %}
+					<li>
+						<a href="/{{ nav['next'] }}">
+							<i class="fa fa-arrow-right"></i>
+						</a>
+					</li>
+				{% endif %}
+			
+			</ul>
+		</div>
+		
+		<div class="navbar-right">
+			<ul class="nav navbar-nav no-borders">
+				
+				<li>
+					<a href="/admin" id="sidebar" class="right-sidebar-toggle">
+						<i class="fa fa-cogs "></i>
+					</a>
+				</li>
+			
+			</ul>
+		</div>
+	</nav>
+</div>

@@ -1,0 +1,10 @@
+#canvasdiv {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto; }
+  #canvasdiv img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
