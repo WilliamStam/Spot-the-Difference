@@ -9,7 +9,7 @@ jQuery.fn.shake = function(intShakes, intDistance, intDuration) {
 	});
 	return this;
 };
-
+var timer;
 var stats = {
 	
 	"clicks":0,
@@ -28,6 +28,7 @@ $(document).ready(function () {
 	$(document).on("click",".canvas-area",function(e){
 		if (stats.timer.start==""){
 			stats.timer.start = new Date();
+			TimerValue();
 		}
 		if($(e.target).is('.difference')){
 			stats.hit = stats.hit + 1;
@@ -59,15 +60,24 @@ function diffCalculator(){
 		$("#footer-progress").find(".progress-bar").text(percent.toFixed(0) + "%").css("width",percent+"%");
 	
 		if (stats.found == stats.total){
+			$("#footer-progress").find(".progress-bar").removeClass("progress-bar-info").addClass("progress-bar-success")
 			toastr["success"]("You found all the differences!", "Success");
 			if (stats.timer.end==""){
 				stats.timer.end = new Date();
+				clearInterval ( timer )
 			}
 			
 		}
 	}
 	
-	
+}
+function TimerValue(){
+	var sec = 0;
+	function pad ( val ) { return val > 9 ? val : "0" + val; }
+	timer = setInterval( function(){
+		$("#seconds").html(pad(++sec%60));
+		$("#minutes").html(pad(parseInt(sec/60,10)));
+	}, 1000);
 	
 	
 }
@@ -79,8 +89,14 @@ function updateStats(){
 	$("#stats-hit").text(stats.hit);
 	$("#stats-miss").text(stats.miss);
 	
-	var accuracy = (stats.found / (stats.clicks - stats.hit))*100
-	accuracy = accuracy.toFixed(2);
+	var accuracy = (stats.hit / (stats.clicks))*100;
+	
+	
+	if (accuracy){
+		accuracy = accuracy.toFixed(2);
+	} else {
+		accuracy = 0;
+	}
 	$("#stats-accuracy").text(accuracy);
 	
 	$(".found-count").html(stats.found)
