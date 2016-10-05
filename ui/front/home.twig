@@ -1,7 +1,9 @@
+
 <section id="content-area">
 	<aside id="menu">
 		<div id="navigation">
 			<div class="profile-picture">
+				{% if record['ID'] %}
 				<img src="/thumbnail/slides/140/140/{{ record['image_left'] }}?crop=false" class="m-b" style="max-width:100%;">
 				
 				<div class="stats-label text-color">
@@ -20,6 +22,9 @@
 				</div>
 				<hr>
 			
+				{% else %}
+				<i class="fa fa-frown-o" style="font-size:100px;"></i>
+				{% endif %}
 			</div>
 		
 		
@@ -30,7 +35,15 @@
 	<section id="wrapper">
 		
 		<div class="content animate-panel">
+			{% if record['ID']=="" %}
 			
+			<div class="alert alert-danger">
+				<p>
+					No slides found
+				</p>
+			</div>
+			
+			{% else %}
 			
 			<div class="row">
 				<div class="col-sm-6">
@@ -50,18 +63,22 @@
 					</div>
 				</div>
 			</div>
+			{% endif %}
 		</div>
 	</section>
 	
 	
 	<footer class="footer">
+		{% if record['ID'] %}
 		<div class="progress full" style="margin:0;">
 			<div style="width: 0" aria-valuemax="100" aria-valuemin="0" aria-valuenow="60" role="progressbar" class=" progress-bar progress-bar-info">
 				0%
 			</div>
 		</div>
+		{% endif %}
 	</footer>
 </section>
+
 <script type="text/javascript">
 	var _ID = "{{ record['ID'] }}";
 </script>

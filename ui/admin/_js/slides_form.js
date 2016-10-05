@@ -48,23 +48,26 @@ var sketchpad = null;
 function loadDataHotspots(){
 	console.log("woof")
 	var d = $("#data").val();
-	d = $.parseJSON(d);
-	console.info(d);
-	var strokes = [];
-	for (var i in d){
-		strokes.push({
-			"type":"path",
-			"path":d[i],
-			"fill":"#ffffff",
-			"stroke":"#FFFFFF",
-			"stroke-opacity":0,
-			"fill-opacity":0.4,
-			"stroke-width":5,
-			"stroke-linecap":"round",
-			"stroke-linejoin":"round"
-		})
+	if (d){
+		d = $.parseJSON(d);
+		console.info(d);
+		var strokes = [];
+		for (var i in d){
+			strokes.push({
+				"type":"path",
+				"path":d[i],
+				"fill":"#ffffff",
+				"stroke":"#FFFFFF",
+				"stroke-opacity":0,
+				"fill-opacity":0.4,
+				"stroke-width":5,
+				"stroke-linecap":"round",
+				"stroke-linejoin":"round"
+			})
+		}
+		sketchpad.strokes(strokes);
 	}
-	sketchpad.strokes(strokes);
+	
 	
 }
 function getImagePreviewData(){

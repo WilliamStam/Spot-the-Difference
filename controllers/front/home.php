@@ -41,7 +41,7 @@ class home extends _ {
 			"sub_section"=> "home",
 			"template"   => "home",
 			"meta"       => array(
-				"title"=> "Woof",
+				"title"=> "Slide | ".$record['heading'],
 			),
 		);
 		$tmpl->records = $records;
