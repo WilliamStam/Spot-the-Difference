@@ -1,3 +1,15 @@
+jQuery.fn.shake = function(intShakes, intDistance, intDuration) {
+	this.each(function() {
+		$(this).css("position","relative");
+		for (var x=1; x<=intShakes; x++) {
+			$(this).animate({left:(intDistance*-1)}, (((intDuration/intShakes)/4)))
+					.animate({left:intDistance}, ((intDuration/intShakes)/2))
+					.animate({left:0}, (((intDuration/intShakes)/4)));
+		}
+	});
+	return this;
+};
+
 var stats = {
 	
 	"clicks":0,
@@ -21,7 +33,7 @@ $(document).ready(function () {
 			stats.hit = stats.hit + 1;
 		} else {
 			stats.miss = 	stats.miss + 1;
-			
+			$(".canvas-area").shake(4,10,100);
 		}
 		stats.clicks = 	stats.clicks + 1;
 		diffCalculator();
