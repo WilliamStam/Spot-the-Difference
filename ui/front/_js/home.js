@@ -6,10 +6,17 @@ var stats = {
 	"accuracy":0,
 	"total":0,
 	"found":0,
+	"timer":{
+		"start":"",
+		"end":""
+	}
 }
 $(document).ready(function () {
 	
 	$(document).on("click",".canvas-area",function(e){
+		if (stats.timer.start==""){
+			stats.timer.start = new Date();
+		}
 		if($(e.target).is('.difference')){
 			stats.hit = stats.hit + 1;
 		} else {
@@ -41,6 +48,10 @@ function diffCalculator(){
 	
 		if (stats.found == stats.total){
 			toastr["success"]("You found all the differences!", "Success");
+			if (stats.timer.end==""){
+				stats.timer.end = new Date();
+			}
+			
 		}
 	}
 	
