@@ -22,6 +22,31 @@
 				</div>
 				<hr>
 			
+					<h4>Statistics</h4>
+					<table class="table">
+						<tbody>
+						<tr>
+							<th>Timer</th>
+							<td id="stats-timer" >00:00</td>
+						</tr>
+						<tr>
+							<th>Clicks</th>
+							<td id="stats-clicks" >0</td>
+						</tr>
+						<tr>
+							<th class="text-right"> - hit - </th>
+							<td id="stats-hit" >0</td>
+						</tr>
+						<tr>
+							<th class="text-right"> - miss - </th>
+							<td id="stats-miss" >0</td>
+						</tr>
+						<tr>
+							<th>Accuracy</th>
+							<td id="stats-accuracy" >0</td>
+						</tr>
+						</tbody>
+					</table>
 				{% else %}
 				<i class="fa fa-frown-o" style="font-size:100px;"></i>
 				{% endif %}
@@ -70,7 +95,7 @@
 	
 	<footer class="footer">
 		{% if record['ID'] %}
-		<div class="progress full" style="margin:0;">
+		<div class="progress full" style="margin:0;" id="footer-progress" >
 			<div style="width: 0" aria-valuemax="100" aria-valuemin="0" aria-valuenow="60" role="progressbar" class=" progress-bar progress-bar-info">
 				0%
 			</div>

@@ -3,4 +3,13 @@
 }
 .canvas-area {
 	position:relative;
+	cursor : pointer;
+}
+.difference {
+	opacity:0;
+	
+	&.active {
+		opacity:1;
+		box-shadow: 0 0 10px rgba(250,250,250,0.5);
+	}
 }

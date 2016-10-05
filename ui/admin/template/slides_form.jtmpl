@@ -87,7 +87,7 @@
 			<div class="panel-body">
 				<div class="btn-group btn-group-justified">
 					<a href="" class="btn btn-default"><i class="fa fa-undo"></i> Undo</a>
-					<a href="" class="btn btn-default"><i class="fa fa-redo"></i> Redo</a>
+					<a href="" class="btn btn-default"><i class="fa fa-repeat"></i> Redo</a>
 				</div>
 				<section id="draw-area"  oncontextmenu="return false;"></section>
 				<input type="hidden" name="data" id="data" value='<%= this.details.data %>'/>
