@@ -1,9 +1,20 @@
-
+var sketchpad = null;
 
 
 $(document).ready(function(){
 
-	$(document).on("change","#data",function(){
+	$(document).on("click","#undo-btn",function(){
+		sketchpad.undo();
+	});
+	
+	
+	$(document).on("click","#redo-btn",function(){
+		sketchpad.redo();
+	});
+	
+	
+	
+	$(document).on("click","#data",function(){
 		$(this).doTimeout( 'change', 250, function(){
 			loadDataHotspots();
 		});
@@ -30,7 +41,23 @@ $(document).ready(function(){
 	
 	
 });
-
+function controlBTNS(){
+	$undo_btn = $("#undo-btn");
+	$redo_btn = $("#redo-btn");
+	
+	if (sketchpad.undoable()){
+		$undo_btn.removeAttr("disabled");
+	} else {
+		$undo_btn.attr("disabled","disabled");
+	}
+	if (sketchpad.redoable()){
+		$redo_btn.removeAttr("disabled");
+	} else {
+		$redo_btn.attr("disabled","disabled");
+	}
+	
+	
+}
 function getData(){
 	
 	var ID = _ID||"";
@@ -44,13 +71,13 @@ function getData(){
 	
 	
 }
-var sketchpad = null;
+
 function loadDataHotspots(){
-	console.log("woof")
+	//console.log("woof")
 	var d = $("#data").val();
 	if (d){
 		d = $.parseJSON(d);
-		console.info(d);
+		//console.info(d);
 		var strokes = [];
 		for (var i in d){
 			strokes.push({
@@ -84,7 +111,7 @@ function getImagePreviewData(){
 			var h = w / ratio;
 			
 			
-			console.log("w:"+w+" | h:"+h+" | ho:"+oh+" | wo:"+ow);
+			//console.log("w:"+w+" | h:"+h+" | ho:"+oh+" | wo:"+ow);
 			
 			$("#draw-area").html('<div id="canvasdiv" style="width:'+w+'px;height:'+h+'px;background: url(/thumbnail/slides/'+w+'/'+h+'/'+img+') no-repeat;"></div>');
 			
@@ -109,9 +136,9 @@ function getImagePreviewData(){
 				}
 				
 				
-				console.log(save)
+				//console.log(save)
 				$("#data").val(JSON.stringify(save, null, 2));
-				
+				controlBTNS();
 			});
 			
 			loadDataHotspots();
