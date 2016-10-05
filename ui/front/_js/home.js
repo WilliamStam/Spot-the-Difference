@@ -48,7 +48,12 @@ $(document).ready(function () {
 	});
 	
 	getData();
-	
+	$(window).resize(function(){
+		$.doTimeout( 'resize', 250, function(){
+			getData()
+		});
+		
+	});
 });
 function diffCalculator(){
 	updateStats();
